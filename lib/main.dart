@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import"secondScreen.dart";
 
 void main() {
-  runApp(myApp());
+  runApp(MaterialApp(home: myApp(),));
 }
 
 class myApp extends StatefulWidget {
@@ -9,6 +10,7 @@ class myApp extends StatefulWidget {
 
   @override
   State<myApp> createState() => _myAppState();
+
 }
 
 class _myAppState extends State<myApp> {
@@ -53,7 +55,10 @@ class _myAppState extends State<myApp> {
               padding: EdgeInsets.all(10.0),
               child: ElevatedButton(
                 child: Text("Open Next Page"),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const secondScreen()));
+                },
               ),
             ),
             Expanded(child: ListView(
